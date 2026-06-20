@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
-// ─── THEME & DATA ─────────────────────────────────────────────────────────────
+// THEME & DATA 
 const THEME = {
   bg: "#0B1120",
   bgCard: "#111827",
@@ -144,13 +144,13 @@ const DATA = {
   ],
 
   journey: [
-    { icon: "🌱", year: "2021", title: "Started Programming", desc: "First lines of code in C and Java. Discovered the joy of problem solving." },
-    { icon: "☕", year: "2022", title: "Learned Java & Python", desc: "Strengthened DSA foundations. Explored Python for scripting and automation." },
-    { icon: "⚛️", year: "2022", title: "Learned MERN Stack", desc: "Dived into MongoDB, Express, React, and Node.js. Built my first full stack apps." },
-    { icon: "💬", year: "2023", title: "Built Chat Application", desc: "First production-grade real-time app with Socket.IO and JWT authentication." },
-    { icon: "🍽️", year: "2023", title: "Restaurant Reservation System", desc: "End-to-end booking platform — complete full-stack product lifecycle." },
-    { icon: "🧠", year: "2024", title: "Built MindFlow AI", desc: "Integrated Groq AI into a MERN platform. First AI-powered SaaS product." },
-    { icon: "🚀", year: "2025", title: "Targeting Product Companies", desc: "Preparing for tier-1 companies. DSA + System Design + open source." },
+    { icon: "🌱", year: "2023", title: "Started Programming", desc: "First lines of code in C and Java. Discovered the joy of problem solving." },
+    { icon: "☕", year: "2023", title: "Learned Java & Python", desc: "Strengthened DSA foundations. Explored Python for scripting and automation." },
+    { icon: "⚛️", year: "2024", title: "Learned MERN Stack", desc: "Dived into MongoDB, Express, React, and Node.js. Built my first full stack apps." },
+    { icon: "💬", year: "2024", title: "Built Chat Application", desc: "First production-grade real-time app with Socket.IO and JWT authentication." },
+    { icon: "🍽️", year: "2025", title: "Restaurant Reservation System", desc: "End-to-end booking platform — complete full-stack product lifecycle." },
+    { icon: "🧠", year: "2025", title: "Built MindFlow AI", desc: "Integrated Groq AI into a MERN platform. First AI-powered SaaS product." },
+    { icon: "🚀", year: "2026", title: "Targeting Product Companies", desc: "Preparing for tier-1 companies. DSA + System Design + open source." },
   ],
 
   startupCards: [
@@ -173,7 +173,7 @@ const DATA = {
   ],
 };
 
-// ─── HOOKS ────────────────────────────────────────────────────────────────────
+// HOOKS 
 function useIntersection(ref, threshold = 0.15) {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -207,7 +207,7 @@ function useTypewriter(strings, speed = 80, pause = 1800) {
   return display;
 }
 
-// ─── PARTICLE CANVAS ──────────────────────────────────────────────────────────
+// PARTICLE CANVAS 
 function ParticleCanvas() {
   const canvasRef = useRef(null);
   useEffect(() => {
@@ -258,7 +258,7 @@ function ParticleCanvas() {
   return <canvas ref={canvasRef} style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0, pointerEvents: "none", opacity: 0.45 }} />;
 }
 
-// ─── MAGNETIC CURSOR ──────────────────────────────────────────────────────────
+// MAGNETIC CURSOR 
 function MagneticCursor() {
   const cursorRef = useRef(null);
   const dotRef = useRef(null);
@@ -289,7 +289,7 @@ function MagneticCursor() {
   );
 }
 
-// ─── NAV ──────────────────────────────────────────────────────────────────────
+// NAV 
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -327,7 +327,7 @@ function Nav() {
   );
 }
 
-// ─── TERMINAL HERO ────────────────────────────────────────────────────────────
+// TERMINAL HERO 
 function Terminal() {
   const lines = [
     { delay: 400, content: <><span style={{ color: THEME.primary }}>$</span> <span style={{ color: "#f8fafc" }}>npm run devos:init</span></> },
@@ -366,7 +366,7 @@ function Terminal() {
   );
 }
 
-// ─── SECTION WRAPPER ──────────────────────────────────────────────────────────
+// SECTION WRAPPER 
 function Section({ id, children, style = {} }) {
   return (
     <section id={id} style={{ position: "relative", zIndex: 1, padding: "100px 5%", ...style }}>
@@ -375,7 +375,7 @@ function Section({ id, children, style = {} }) {
   );
 }
 
-// ─── REVEAL WRAPPER ───────────────────────────────────────────────────────────
+// REVEAL WRAPPER 
 function Reveal({ children, delay = 0, style = {} }) {
   const ref = useRef(null);
   const visible = useIntersection(ref);
@@ -386,7 +386,7 @@ function Reveal({ children, delay = 0, style = {} }) {
   );
 }
 
-// ─── SECTION HEADER ───────────────────────────────────────────────────────────
+// SECTION HEADER 
 function SectionHeader({ eyebrow, title, sub }) {
   return (
     <Reveal style={{ textAlign: "center", marginBottom: 60 }}>
@@ -397,7 +397,7 @@ function SectionHeader({ eyebrow, title, sub }) {
   );
 }
 
-// ─── GLASS CARD ───────────────────────────────────────────────────────────────
+// GLASS CARD 
 function GlassCard({ children, style = {}, hover = true }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -417,7 +417,7 @@ function GlassCard({ children, style = {}, hover = true }) {
   );
 }
 
-// ─── HERO SECTION ─────────────────────────────────────────────────────────────
+//  HERO SECTION 
 function HeroSection() {
   const typed = useTypewriter(DATA.roles);
   return (
@@ -466,7 +466,7 @@ function HeroSection() {
   );
 }
 
-// ─── ABOUT SECTION ────────────────────────────────────────────────────────────
+// ABOUT SECTION 
 function AboutSection() {
   const statsRef = useRef(null);
   const statsVisible = useIntersection(statsRef);
@@ -534,7 +534,7 @@ function AboutSection() {
   );
 }
 
-// ─── SKILLS SECTION ───────────────────────────────────────────────────────────
+// SKILLS SECTION
 function SkillsSection() {
   const [hovered, setHovered] = useState(null);
   return (
@@ -572,7 +572,7 @@ function SkillsSection() {
   );
 }
 
-// ─── PROJECT CARD ─────────────────────────────────────────────────────────────
+//PROJECT CARD 
 function ProjectCard({ project, delay }) {
   const [hov, setHov] = useState(false);
   return (
@@ -667,7 +667,7 @@ function ProjectsSection() {
   );
 }
 
-// ─── JOURNEY SECTION ──────────────────────────────────────────────────────────
+//JOURNEY SECTION 
 function JourneySection() {
   return (
     <Section id="journey">
@@ -691,7 +691,7 @@ function JourneySection() {
   );
 }
 
-// ─── STARTUP SECTION ─────────────────────────────────────────────────────────
+//STARTUP SECTION 
 function StartupSection() {
   return (
     <Section id="startup">
@@ -711,7 +711,7 @@ function StartupSection() {
   );
 }
 
-// ─── AI REPORT SECTION ───────────────────────────────────────────────────────
+// AI REPORT SECTION 
 function AnimatedBar({ value, visible }) {
   return (
     <div style={{ height: 6, background: "rgba(255,255,255,0.06)", borderRadius: 3, overflow: "hidden" }}>
@@ -771,7 +771,7 @@ function AIReportSection() {
   );
 }
 
-// ─── CONTACT SECTION ─────────────────────────────────────────────────────────
+// CONTACT SECTION 
 function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
@@ -842,7 +842,7 @@ function ContactSection() {
   );
 }
 
-// ─── FOOTER ──────────────────────────────────────────────────────────────────
+// FOOTER 
 function Footer() {
   return (
     <footer style={{ borderTop: `1px solid ${THEME.border}`, padding: "28px 5%", textAlign: "center", fontFamily: "'JetBrains Mono',monospace", fontSize: "0.75rem", color: THEME.muted, position: "relative", zIndex: 1 }}>
@@ -852,7 +852,7 @@ function Footer() {
   );
 }
 
-// ─── GLOBAL STYLES ───────────────────────────────────────────────────────────
+// GLOBAL STYLES 
 const globalCSS = `
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -868,7 +868,7 @@ const globalCSS = `
   }
 `;
 
-// ─── APP ROOT ────────────────────────────────────────────────────────────────
+// APP ROOT 
 export default function App() {
   return (
     <>
