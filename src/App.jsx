@@ -96,7 +96,7 @@ const DATA = {
       status: "LIVE",
       color: "#38BDF8",
       github: "https://github.com/LakinsaniSaiGanesh8800",
-      live:"https://chat-application-mauve-ten.vercel.app",
+      live:"https://chat-application-3pqj-mh9ghuky6-lakinsani-sai-ganeshs-projects.vercel.app",
       metrics: [
         { label: "Protocol", value: "WebSocket" },
         { label: "Latency", value: "<50ms" },
